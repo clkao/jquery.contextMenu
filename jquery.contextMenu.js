@@ -121,7 +121,10 @@ if(jQuery)( function() {
 							
 							// Hide bindings
 							setTimeout( function() { // Delay for Mozilla
-								$(document).click( function() {
+								$(document).click( function(e) {
+									if ( menu.get(0).contains(e.target) )
+					                                        return true;
+
 									$(document).unbind('click').unbind('keypress');
 									$(menu).fadeOut(o.outSpeed);
 									return false;
