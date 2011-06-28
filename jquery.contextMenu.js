@@ -71,6 +71,7 @@ if(jQuery)( function() {
 							
 							// Show the menu
 							$(document).unbind('click');
+							if(o.onShow) o.onShow(menu);
 							$(menu).css({ top: y, left: x }).fadeIn(o.inSpeed);
 							// Hover events
 							$(menu).find('A').mouseover( function() {
